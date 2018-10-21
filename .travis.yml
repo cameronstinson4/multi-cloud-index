@@ -1,3 +1,7 @@
+  
+language: node_js
+node_js:
+  - node
 deploy:
   provider: s3
   access_key_id:
@@ -5,3 +9,10 @@ deploy:
   secret_access_key:
     secure: kyBWTThfAFaca+fngEGhe/GwM9N9yYdMXZezVdiKUoiGD9EHztdi6+VtNt+Bl87r+hhopJ3aXJFwp3Kw7WN7p19pa1hB/gMG+snJVH2TDp5owrvCT+2d+15n4bbsi6XFgsixIgSLgmAySilcOrIdvENlaFp7vg/oLWlvcVhm37SdqYQpfe1rWV9q5mXD5uxxHQFgbm6efduhNjPhtOwDqNT8aapz0EbuFHxJ+S/CDH5X2EvCUP5lfPSbMy17/OuBbZnFg22xC9/4a7ULMK+G4aOZWjpuPPi1n52K4EHCMeMFoH6Etd2DeY8ys5gcLAceZEo218seU/AWvEEUztZpq8yQLXLdDhp8SfWNIHmKt6W1FYgykL9EKM/OmXpSGKMYvTUlWvtOvPjTfSKfJUOqEkg/rbNiDTCBpQQiswLUTjaG62dW1UqrDkLOTZ1+nwCIf4TniMNl1SdofZHBB2PdC8x58Lb82n0wZDX3xcieVrjhyr/1URC1juq5zihFF6l6kmWSd+Mybjb7lhHqzwbpRQR1KB2GiPSXqjPXGlgw4fVIaMq3jq/3D11TdXnyFa923pb1Aef7naDrMVSnVbUxIxvwIgOfk5x4akQplCpKcrJmH+UyB/+FR07z12iSXFmlJavfTuAkOfUwugSrXT+OYxk74tOQpImOL61XIDXOHhA=
   bucket: S3 Bucket
+
+before_script:
+  - "npm i -g gatsby"
+  - "npm i"
+
+script:
+  - "npm run build"
