@@ -12,6 +12,8 @@ deploy:
   acl: public_read
   skip_cleanup: true
   region: us-east-1
+  local_dir: public
+
 
 
 
